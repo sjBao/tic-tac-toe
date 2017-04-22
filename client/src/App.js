@@ -1,25 +1,31 @@
 import React, { Component } from 'react';
+import BoardBox from './BoardBox';
 import './App.css';
 
 class App extends Component {
   state = {
-    board: ['','','','','','','','',''],
+    board: [null,null,null,null,null,null,null,null,null],
     playerOneTurn: true,
   };
 
-  markBox = (e) => {
-    console.log(e.target.);
-    let newBoard = this.state.board;
-    newBoard[5] = 5;
-    this.setState({
-      board: newBoard
-    });
+  markBox = (idx) => {
+    let { board, playerOneTurn } = this.state;
+    if (playerOneTurn) {
+      board[idx] = 'X'
+    } else {
+      board[idx] = 'O'
+    }
+    this.setState(prevState => ({
+      board: board,
+      playerOneTurn: !prevState.playerOneTurn,
+    }));
   };
 
   render() {
     const board = this.state.board.map( (boxValue, i) => {
       return (
-        <input key={i} className="box" onClick={this.markBox} value={boxValue} />
+        <BoardBox
+          key={i} markBox={this.markBox} mark={boxValue} index={i}/>
       )
     });
     return (
