@@ -4,7 +4,7 @@ import './App.css';
 
 class App extends Component {
   state = {
-    board: [0,1,2,3,4,5,6,7,8],//Array(9).fill(null),
+    board: Array(9).fill(null),
     playerOneTurn: true,
   };
 
@@ -16,15 +16,6 @@ class App extends Component {
       playerOneTurn: !prevState.playerOneTurn,
     }));
   };
-
-  checkWinner = (arr) => {
-    if (arr.every(box => box === 'X')) {
-      console.log('Player 1 Wins!')
-    };
-    if (arr.every(box => box === 'O')) {
-      console.log('Player 2 Wins!')
-    };
-  }
 
   checkRow = (idx) => {
     let { board } = this.state;
@@ -72,6 +63,21 @@ class App extends Component {
     }
   }
 
+  checkWinner = (arr) => {
+    if (arr.every(box => box === 'X')) {
+      console.log('Player 1 Wins!')
+    };
+    if (arr.every(box => box === 'O')) {
+      console.log('Player 2 Wins!')
+    };
+  }
+
+  checkIfDraw = () => {
+    if (this.state.board.every(box => box !== null)){
+      return true
+    }
+  }
+  
   render() {
     const board = this.state.board.map( (boxValue, i) => {
       return (
