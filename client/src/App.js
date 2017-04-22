@@ -1,18 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  state = {
+    board: ['','','','','','','','',''],
+    playerOneTurn: true,
+  };
+
+  markBox = (e) => {
+    console.log(e.target.);
+    let newBoard = this.state.board;
+    newBoard[5] = 5;
+    this.setState({
+      board: newBoard
+    });
+  };
+
   render() {
+    const board = this.state.board.map( (boxValue, i) => {
+      return (
+        <input key={i} className="box" onClick={this.markBox} value={boxValue} />
+      )
+    });
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+        <div className="board">
+          {board}
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
   }

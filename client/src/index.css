@@ -3,3 +3,15 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 350px;
+}
+
+.box {
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+}
