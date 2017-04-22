@@ -17,6 +17,15 @@ class App extends Component {
     }));
   };
 
+  checkWinner = (arr) => {
+    if (arr.every(box => box === 'X')) {
+      console.log('Player 1 Wins!')
+    };
+    if (arr.every(box => box === 'O')) {
+      console.log('Player 2 Wins!')
+    };
+  }
+
   checkRow = (idx) => {
     let { board } = this.state;
     let currentRow = [
@@ -24,9 +33,7 @@ class App extends Component {
       board[Math.floor(idx/3) * 3 + 1],
       board[Math.floor(idx/3) * 3 + 2]
     ];
-
-    console.log(currentRow)
-
+    this.checkWinner(currentRow);
   }
 
   checkColumn = (idx) => {
@@ -37,7 +44,7 @@ class App extends Component {
       board[Math.floor(idx%3) + 6]
     ];
 
-    console.log(currentRow)
+    this.checkWinner(currentRow);
   }
 
   checkDiagonals = (idx) => {
@@ -50,7 +57,7 @@ class App extends Component {
         board[Math.floor(idx%2) + 6]
       ];
 
-      console.log(currentRow)
+      this.checkWinner(currentRow);
     }
 
 
@@ -61,16 +68,22 @@ class App extends Component {
         board[Math.floor(idx%4) + 8]
       ];
 
-      console.log(currentRow)
+      this.checkWinner(currentRow);
     }
   }
 
   render() {
-    this.checkDiagonals(8);
     const board = this.state.board.map( (boxValue, i) => {
       return (
         <BoardBox
-          key={i} markBox={this.markBox} mark={boxValue} index={i}/>
+          key={i}
+          markBox={this.markBox}
+          checkRow={this.checkRow}
+          checkColumn={this.checkColumn}
+          checkDiagonals={this.checkDiagonals}
+          mark={boxValue}
+          index={i}
+        />
       )
     });
     return (
