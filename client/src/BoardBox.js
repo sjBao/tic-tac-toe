@@ -2,7 +2,6 @@ import React from 'react';
 
 const BoardBox = (props) => {
   const handleClick = () => {
-    console.log(props.index);
     props.markBox(props.index)
   }
 
