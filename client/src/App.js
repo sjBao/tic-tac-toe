@@ -63,10 +63,10 @@ class App extends Component {
 
   checkWinner = (arr) => {
     if (arr.every(box => box === 'X')) {
-      this.setState({ winner: "Player 1"})
+      this.setState({ winner: "Player 1 Wins!"})
     };
     if (arr.every(box => box === 'O')) {
-      this.setState({ winner: "Player 2"})
+      this.setState({ winner: "Player 2 Wins!"})
     };
   }
 
@@ -90,6 +90,7 @@ class App extends Component {
           checkDiagonals={this.checkDiagonals}
           checkIfDraw={this.checkIfDraw}
           mark={boxValue}
+          winner={winner}
           index={i}
         />
       )
