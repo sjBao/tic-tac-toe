@@ -1,13 +1,32 @@
 import React, { Component } from 'react';
 import BoardBox from './BoardBox';
+import GameMenu from './GameMenu';
 import './App.css';
 
 class App extends Component {
   state = {
     board: Array(9).fill(null),
     playerOneTurn: true,
+    gameOver: true,
     winner: null,
   };
+
+  reset = () => {
+    this.setState({
+      board: Array(9).fill(null),
+      winner: null,
+      gameOver: false
+    });
+  }
+
+  forfeit = () => {
+    let { playerOneTurn, winner } = this.state;
+    playerOneTurn ? winner = 'Player 2 Wins!' : winner = 'Player 1 Wins!';
+    this.setState({
+      winner: winner,
+      gameOver: true
+    });
+  }
 
   markBox = (idx) => {
     let { board, playerOneTurn } = this.state;
@@ -63,10 +82,16 @@ class App extends Component {
 
   checkWinner = (arr) => {
     if (arr.every(box => box === 'X')) {
-      this.setState({ winner: "Player 1 Wins!"})
+      this.setState({
+        winner: "Player 1 Wins!",
+        gameOver: true
+      })
     };
     if (arr.every(box => box === 'O')) {
-      this.setState({ winner: "Player 2 Wins!"})
+      this.setState({
+        winner: "Player 2 Wins!",
+        gameOver: true
+      })
     };
   }
 
@@ -74,12 +99,17 @@ class App extends Component {
     let { board, winner } = this.state;
 
     if (board.every(box => box !== null) && !winner ){
-      this.setState({ winner: "Draw" })
+      this.setState({
+        winner: "Draw" ,
+        gameOver: true
+      })
     }
   }
 
   render() {
-    let { board, playerOneTurn, winner , gameStatus } = this.state;
+    let {
+      board, playerOneTurn, winner, gameStatus, gameOver } = this.state;
+
     const CurrentBoard = board.map( (boxValue, i) => {
       return (
         <BoardBox
@@ -90,7 +120,7 @@ class App extends Component {
           checkDiagonals={this.checkDiagonals}
           checkIfDraw={this.checkIfDraw}
           mark={boxValue}
-          winner={winner}
+          gameOver={gameOver}
           index={i}
         />
       )
@@ -112,11 +142,17 @@ class App extends Component {
 
         <div className="game-status">
           { playerOneTurn ? "Player 1's Turn" : "Player 2's Turn" }
+          <div className="game-status-widget">
+            {gameStatus}
+          </div>
         </div>
 
-        <div className="game-over-widget">
-          {gameStatus}
-        </div>
+        <GameMenu
+          winner={winner}
+          gameOver={gameOver}
+          forfeit={this.forfeit}
+          reset={this.reset} />
+
       </div>
     );
   }
