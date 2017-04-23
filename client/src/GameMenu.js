@@ -10,9 +10,8 @@ class GameMenu extends Component {
 
         { !gameOver && !winner ? <ForfeitBtn forfeit={forfeit} /> : '' }
 
-        <button>
-          Submit Score
-        </button>
+        { gameOver && winner ? <SubmitResultsBtn /> : '' }
+
       </div>
     )
   };
@@ -30,6 +29,14 @@ const ForfeitBtn = (props) => {
   return (
     <button className="forfeit" onClick={props.forfeit}>
       Forfeit
+    </button>
+  )
+}
+
+const SubmitResultsBtn = (props) => {
+  return (
+    <button className="submit-results">
+      Submit results!
     </button>
   )
 }
