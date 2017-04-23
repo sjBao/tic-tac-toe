@@ -10,7 +10,10 @@ const BoardBox = (props) => {
   }
 
   return (
-    <button className="box" onClick={handleClick}>
+    <button
+      className="box"
+      onClick={handleClick}
+      disabled={props.mark}>
       {props.mark}
     </button>
   )
