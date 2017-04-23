@@ -6,6 +6,7 @@ class App extends Component {
   state = {
     board: Array(9).fill(null),
     playerOneTurn: true,
+    winner: null,
   };
 
   markBox = (idx) => {
@@ -47,10 +48,8 @@ class App extends Component {
         board[Math.floor(idx%2) + 4],
         board[Math.floor(idx%2) + 6]
       ];
-
       this.checkWinner(currentRow);
     }
-
 
     if (idx%4 === 0) {
       currentRow = [
@@ -58,17 +57,16 @@ class App extends Component {
         board[Math.floor(idx%4) + 4],
         board[Math.floor(idx%4) + 8]
       ];
-
       this.checkWinner(currentRow);
     }
   }
 
   checkWinner = (arr) => {
     if (arr.every(box => box === 'X')) {
-      console.log('Player 1 Wins!')
+      this.setState({ winner: "Player 1"})
     };
     if (arr.every(box => box === 'O')) {
-      console.log('Player 2 Wins!')
+      this.setState({ winner: "Player 2"})
     };
   }
 
@@ -77,9 +75,10 @@ class App extends Component {
       return true
     }
   }
-  
+
   render() {
-    const board = this.state.board.map( (boxValue, i) => {
+    let { board, playerOneTurn, winner , gameStatus } = this.state;
+    const CurrentBoard = board.map( (boxValue, i) => {
       return (
         <BoardBox
           key={i}
@@ -92,10 +91,26 @@ class App extends Component {
         />
       )
     });
+    if (winner !== null ) {
+      gameStatus = (
+        <div>
+          <p>Game over!</p>
+          <p>{ winner }</p>
+        </div>
+      )
+    }
     return (
       <div className="App">
         <div className="board">
-          {board}
+          {CurrentBoard}
+        </div>
+
+        <div className="game-status">
+          { playerOneTurn ? "Player 1's Turn" : "Player 2's Turn" }
+        </div>
+
+        <div className="game-over-widget">
+          {gameStatus}
         </div>
       </div>
     );
