@@ -13,7 +13,7 @@ const BoardBox = (props) => {
     <button
       className="box"
       onClick={handleClick}
-      disabled={props.mark || props.winner}>
+      disabled={props.mark || props.gameOver}>
       {props.mark}
     </button>
   )
