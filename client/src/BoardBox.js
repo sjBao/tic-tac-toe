@@ -6,7 +6,7 @@ const BoardBox = (props) => {
     props.checkRow(props.index)
     props.checkColumn(props.index)
     props.checkDiagonals(props.index)
-
+    props.checkIfDraw()
   }
 
   return (

@@ -71,8 +71,10 @@ class App extends Component {
   }
 
   checkIfDraw = () => {
-    if (this.state.board.every(box => box !== null)){
-      return true
+    let { board, winner } = this.state;
+
+    if (board.every(box => box !== null) && !winner ){
+      this.setState({ winner: "Draw" })
     }
   }
 
@@ -86,11 +88,13 @@ class App extends Component {
           checkRow={this.checkRow}
           checkColumn={this.checkColumn}
           checkDiagonals={this.checkDiagonals}
+          checkIfDraw={this.checkIfDraw}
           mark={boxValue}
           index={i}
         />
       )
     });
+
     if (winner !== null ) {
       gameStatus = (
         <div>
