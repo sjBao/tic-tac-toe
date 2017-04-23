@@ -140,13 +140,6 @@ class App extends Component {
           {CurrentBoard}
         </div>
 
-        <div className="game-status">
-          { playerOneTurn ? "Player 1's Turn" : "Player 2's Turn" }
-          <div className="game-status-widget">
-            {gameStatus}
-          </div>
-        </div>
-
         <GameMenu
           winner={winner}
           gameOver={gameOver}
