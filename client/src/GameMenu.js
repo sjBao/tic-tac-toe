@@ -33,7 +33,7 @@ const ForfeitBtn = (props) => {
   )
 }
 
-const SubmitResultsBtn = (props) => {
+const SubmitResultsBtn = () => {
   return (
     <button className="submit-results">
       Submit results!
