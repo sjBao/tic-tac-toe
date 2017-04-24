@@ -9,13 +9,22 @@ class GameStatus extends Component {
       if (!gameOver) {
         return (
           <div className="player-turn">
-            { playerOneTurn ? "Player 1's Turn" : "Player 2's Turn" }
+            {
+              playerOneTurn ?
+              <h2 className="player1">
+                Player 1's Turn
+              </h2>
+               :
+              <h2 className="player2">
+                Player 2's Turn
+              </h2>
+             }
           </div>
         )
       } else {
         return (
           <div className="game-status">
-            { winner }
+            <h1 className={ (winner || '').match('Player 1') ? 'player1': 'player2' }>{ winner }</h1>
           </div>
         )
       }
