@@ -8,14 +8,14 @@ class GameStatus extends Component {
     const gameStatus = () => {
       if (!gameOver) {
         return (
-          <div className="game-status">
+          <div className="player-turn">
             { playerOneTurn ? "Player 1's Turn" : "Player 2's Turn" }
           </div>
         )
       } else {
         return (
           <div className="game-status">
-            {winner}
+            { winner }
           </div>
         )
       }

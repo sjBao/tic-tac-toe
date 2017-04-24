@@ -143,7 +143,6 @@ class App extends Component {
           gameOver={gameOver}
           forfeit={this.forfeit}
           reset={this.reset} />
-
       </div>
     );
   }
