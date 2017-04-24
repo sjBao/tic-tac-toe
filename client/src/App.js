@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import BoardBox from './BoardBox';
 import GameMenu from './GameMenu';
+import GameStatus from './GameStatus';
 import './App.css';
 
 class App extends Component {
@@ -108,7 +109,7 @@ class App extends Component {
 
   render() {
     let {
-      board, playerOneTurn, winner, gameStatus, gameOver } = this.state;
+      board, playerOneTurn, winner, gameOver } = this.state;
 
     const CurrentBoard = board.map( (boxValue, i) => {
       return (
@@ -126,33 +127,22 @@ class App extends Component {
       )
     });
 
-    if (winner !== null ) {
-      gameStatus = (
-        <div>
-          <p>Game over!</p>
-          <p>{ winner }</p>
-        </div>
-      )
-    }
     return (
       <div className="App">
         <div className="board">
           {CurrentBoard}
         </div>
 
-        <div className="game-status">
-          { playerOneTurn ? "Player 1's Turn" : "Player 2's Turn" }
-          <div className="game-status-widget">
-            {gameStatus}
-          </div>
-        </div>
+        <GameStatus
+          winner={winner}
+          gameOver={gameOver}
+          playerOneTurn={playerOneTurn} />
 
         <GameMenu
           winner={winner}
           gameOver={gameOver}
           forfeit={this.forfeit}
           reset={this.reset} />
-
       </div>
     );
   }
