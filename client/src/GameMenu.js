@@ -8,7 +8,6 @@ class GameMenu extends Component {
       <div className={"game-menu "+gameOver}>
         { gameOver ? <NewGameBtn reset={reset} /> : '' }
         { !gameOver && !winner ? <ForfeitBtn forfeit={forfeit} /> : '' }
-        { gameOver && winner ? <SubmitResultsBtn /> : '' }
       </div>
     )
   };

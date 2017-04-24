@@ -129,6 +129,7 @@ class App extends Component {
 
     return (
       <div className="App container">
+        <h1>Tic-Tac-Toe</h1>
         <div className="board">
           {CurrentBoard}
         </div>

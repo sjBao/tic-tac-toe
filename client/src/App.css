@@ -1,9 +1,10 @@
 .container {
   width: 350px;
-  margin: 0 auto;
+  margin: 100px auto;
 }
 
 .board {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -45,8 +46,8 @@
 .game-menu.true {
   position: absolute;
   background: rgba(200, 200, 200, 0.8);
-  top: 0px;
-  margin: auto;
+  margin: 0 auto;
+  top: 157px;
   width: 355px;
   height: 336px;
   display: flex;
@@ -62,7 +63,7 @@
   color: #666;
   display: block;
   padding: 10px 20px;
-  margin: 20px auto;
+  margin: 0 auto;
   text-transform: uppercase;
   font-weight: bold;
   transition: 0.3s;
@@ -94,6 +95,7 @@
 }
 
 .player-turn {
+  display: block;
   text-align: center;
 }
 
@@ -105,7 +107,7 @@
   color: royalblue;
 }
 
-.game-status {
+/*.game-status {
   text-align: center;
-}
+}*/
 
