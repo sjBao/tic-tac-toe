@@ -5,13 +5,10 @@ class GameMenu extends Component {
     let { reset, forfeit, winner, gameOver } = this.props
 
     return (
-      <div className="game-menu">
+      <div className={"game-menu "+gameOver}>
         { gameOver ? <NewGameBtn reset={reset} /> : '' }
-
         { !gameOver && !winner ? <ForfeitBtn forfeit={forfeit} /> : '' }
-
         { gameOver && winner ? <SubmitResultsBtn /> : '' }
-
       </div>
     )
   };

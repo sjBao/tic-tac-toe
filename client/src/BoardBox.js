@@ -11,7 +11,7 @@ const BoardBox = (props) => {
 
   return (
     <button
-      className="box"
+      className="board-box"
       onClick={handleClick}
       disabled={props.mark || props.gameOver}>
       {props.mark}
