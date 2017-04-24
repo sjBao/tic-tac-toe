@@ -93,3 +93,19 @@
   transform: scale(1.15)
 }
 
+.player-turn {
+  text-align: center;
+}
+
+.player1 {
+  color: indianred;
+}
+
+.player2 {
+  color: royalblue;
+}
+
+.game-status {
+  text-align: center;
+}
+
