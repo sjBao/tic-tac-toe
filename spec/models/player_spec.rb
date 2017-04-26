@@ -2,6 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Player, type: :model do
 
+  describe 'Player' do
+    it "should have a name" do
+      expect Player.new(:name => 'Tony') to have_attributes(:name => 'Tony')
+    end
+  end
+
   context "when name is empty" do
     let(:player) { Player.new }
 
