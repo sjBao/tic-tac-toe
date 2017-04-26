@@ -1,2 +1,2 @@
-class Result < ApplicationRecord
+class Game < ApplicationRecord
 end
