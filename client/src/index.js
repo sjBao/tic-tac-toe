@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Game from './pages/game/Game';
 import './index.css';
 
+import createBrowserHistory from 'history/createBrowserHistory';
+
+import Routes from './routes';
+
+const history = createBrowserHistory()
 ReactDOM.render(
-  <Game />,
+  <Routes history={history} />,
   document.getElementById('root')
 );
