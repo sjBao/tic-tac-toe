@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class Layout extends Component {
   render() {
     return (
-      <div className="layout">
+      <div className="container">
         <nav>
           <ul>
             <li> <Link to="/">Game</Link></li>

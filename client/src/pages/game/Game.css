@@ -11,7 +11,7 @@
   align-items: center;
   border-radius: 5px;
   background: #999;
-  width: 355px;
+  max-width: 355px;
   height: 335px;
   margin: 0 auto;
 }
@@ -47,7 +47,7 @@
   position: absolute;
   background: rgba(200, 200, 200, 0.8);
   margin: 0 auto;
-  width: inherit;
+  width: 100%;
   height: inherit;
   display: flex;
   flex-direction: column;
@@ -106,7 +106,22 @@
   color: royalblue;
 }
 
-/*.game-status {
-  text-align: center;
-}*/
 
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+  }
+
+  .board {
+    width: 100%;
+  }
+}
+
+@media (max-width: 300px) {
+  .board-box {
+    width: 30%;
+    height: 30%;
+    margin: 0;
+    padding: 0;
+  }
+}
