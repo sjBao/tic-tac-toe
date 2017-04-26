@@ -6,11 +6,26 @@ RSpec.describe Player, type: :model do
     let(:player) { Player.new }
 
     it "should not be valid" do
-      expect(player.valid?).to be_false
+      expect(player.valid?).to be false
     end
 
     it "should not save" do
-      expect(user.save).to be_false
+      expect(player.save).to be false
+    end
+  end
+
+  context "when name is not unique" do
+    let(:player1) { Player.new(name: 'Gandalf') }
+    let(:player2) { Player.new(name: 'Gandalf') }
+
+    it "should not be valid" do
+      player1.save
+      expect(player2.valid?).to be false
+    end
+
+    it "should not save" do
+      player1.save
+      expect(player2.save).to be false
     end
   end
 end
