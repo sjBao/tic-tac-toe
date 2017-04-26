@@ -133,9 +133,11 @@ class Game extends Component {
         <div className="board">
           <div className={"game-menu " + gameOver}>
             { gameOver ?
-              <button className="reset" onClick={this.reset}>
-              New Game!
-            </button> : ''
+              <GameMenu
+                reset={this.reset}
+                winner={winner}
+                gameOver={gameOver}
+               /> : ''
             }
           </div>
           {CurrentBoard}

@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 
 class GameMenu extends Component {
   render() {
-    let { reset, forfeit, winner, gameOver } = this.props
+    let { reset, winner, gameOver } = this.props
 
     return (
-      <div className="game-menu false">
-        { !gameOver && !winner ? <ForfeitBtn forfeit={forfeit} /> : '' }
+      <div className={"game-menu "+ gameOver}>
+        { gameOver ? <NewGameBtn reset={reset} /> : '' }
+        { gameOver && winner ? <SubmitResultsBtn /> : '' }
       </div>
     )
   };
@@ -15,12 +16,6 @@ class GameMenu extends Component {
 const NewGameBtn = (props) => (
     <button className="reset" onClick={props.reset}>
       New Game!
-    </button>
-)
-
-const ForfeitBtn = (props) => (
-    <button className="forfeit" onClick={props.forfeit}>
-      Forfeit
     </button>
 )
 
