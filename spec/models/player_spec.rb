@@ -30,18 +30,12 @@ RSpec.describe Player, type: :model do
         expect(@player2.save).to be false
       end
     end
+  end
 
-    context 'Player associations' do
-
-      it "has many games" do
-        assc = described_class.reflect_on_association(:game)
-        expect(assc.macro).to eq :has_many
-      end
-
-      it "has many oppnents through games"
-
-      it "has many wins through games"
-    end
+  describe 'Player associations' do
+    it { should have_many(:games) }
+    it { should have_many(:opponents).through(:games) }
+    it { should have_many(:wins).through(:games) }
   end
 
 end
