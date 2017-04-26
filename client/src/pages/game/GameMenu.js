@@ -5,36 +5,28 @@ class GameMenu extends Component {
     let { reset, forfeit, winner, gameOver } = this.props
 
     return (
-      <div className={"game-menu "+gameOver}>
-        { gameOver ? <NewGameBtn reset={reset} /> : '' }
+      <div className="game-menu false">
         { !gameOver && !winner ? <ForfeitBtn forfeit={forfeit} /> : '' }
       </div>
     )
   };
 };
 
-const NewGameBtn = (props) => {
-  return (
+const NewGameBtn = (props) => (
     <button className="reset" onClick={props.reset}>
       New Game!
     </button>
-  )
-}
+)
 
-const ForfeitBtn = (props) => {
-  return (
+const ForfeitBtn = (props) => (
     <button className="forfeit" onClick={props.forfeit}>
       Forfeit
     </button>
-  )
-}
+)
 
-const SubmitResultsBtn = () => {
-  return (
+const SubmitResultsBtn = () => (
     <button className="submit-results">
       Submit results!
     </button>
-  )
-}
-
+)
 export default GameMenu;

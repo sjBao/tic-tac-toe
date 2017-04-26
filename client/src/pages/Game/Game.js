@@ -103,7 +103,7 @@ class Game extends Component {
       this.setState({
         winner: "Draw" ,
         gameOver: true
-      })
+      });
     }
   }
 
@@ -131,6 +131,13 @@ class Game extends Component {
       <div className="Game container">
         <h1>Tic-Tac-Toe</h1>
         <div className="board">
+          <div className={"game-menu " + gameOver}>
+            { gameOver ?
+              <button className="reset" onClick={this.reset}>
+              New Game!
+            </button> : ''
+            }
+          </div>
           {CurrentBoard}
         </div>
 
@@ -139,11 +146,12 @@ class Game extends Component {
           gameOver={gameOver}
           playerOneTurn={playerOneTurn} />
 
-        <GameMenu
-          winner={winner}
-          gameOver={gameOver}
-          forfeit={this.forfeit}
-          reset={this.reset} />
+        { !gameOver && !winner ?
+           <button className="forfeit" onClick={this.forfeit}>
+             Forfeit
+           </button>
+           : ''
+         }
       </div>
     );
   }

@@ -1,6 +1,6 @@
 .container {
   width: 350px;
-  margin: 100px auto;
+  margin: 50px auto;
 }
 
 .board {
@@ -47,32 +47,12 @@
   position: absolute;
   background: rgba(200, 200, 200, 0.8);
   margin: 0 auto;
-  top: 157px;
-  width: 355px;
-  height: 336px;
+  width: inherit;
+  height: inherit;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.game-menu.false .forfeit {
-  border: 2px solid goldenrod;
-  background: white;
-  border-radius: 5px;
-  color: #666;
-  display: block;
-  padding: 10px 20px;
-  margin: 0 auto;
-  text-transform: uppercase;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.game-menu.false .forfeit:hover {
-  background: goldenrod;
-  color: #FFF;
-  transform: scale(1.15)
 }
 
 .game-menu.true button {
@@ -91,6 +71,25 @@
 .game-menu.true button:hover {
   background: cornflowerblue;
   color: #EEE;
+  transform: scale(1.15)
+}
+
+.forfeit {
+  border: 2px solid goldenrod;
+  background: white;
+  border-radius: 5px;
+  color: #666;
+  display: block;
+  padding: 10px 20px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.forfeit:hover {
+  background: goldenrod;
+  color: #FFF;
   transform: scale(1.15)
 }
 
