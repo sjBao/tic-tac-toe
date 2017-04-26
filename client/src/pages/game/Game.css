@@ -40,7 +40,8 @@
 }
 
 .game-menu {
-  transition: 0.5s
+  transition: 0.5s;
+  border-radius: 5px;
 }
 
 .game-menu.true {
