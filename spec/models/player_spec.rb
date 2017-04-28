@@ -10,6 +10,9 @@ RSpec.describe Player, type: :model do
     it "should not save to database" do
       expect(player.save).to be false
     end
+  end
 
+  context "Player associations" do
+    it { should have_many(:games_won) }
   end
 end
