@@ -14,5 +14,6 @@ RSpec.describe Player, type: :model do
 
   context "Player associations" do
     it { should have_many(:games_won) }
+    it { should have_many(:games_played) }
   end
 end
