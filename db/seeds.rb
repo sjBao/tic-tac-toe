@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Player.destroy_all
+
+players = Player.create([
+  { name: 'Bictoria Bun' },
+  { name: 'Bristen Ban' },
+  { name: 'Baul Bho' },
+  { name: 'Barvin Bung' },
+  { name: 'Bimmy Buan' }
+])
+
+matches = PlayerGame.create([
+  { player1: Player.find_or_create_by(name: 'Bictoria Bun'),
+    player2: Player.find_or_create_by(name: 'Bristen Ban'),
+    game_id: Game.create
+   }
+])
