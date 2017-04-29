@@ -22,16 +22,26 @@ Game.destroy_all
 matches = PlayerGame.create([
   { player1: Player.find_or_create_by(name: 'Bictoria Bun'),
     player2: Player.find_or_create_by(name: 'Bristen Ban'),
-    game_id: Game.create(player: Player.find_or_create_by(name: 'Bictoria Bun') )
+    game_id: Game.create(winner: Player.find_or_create_by(name: 'Bictoria Bun') )
   },
 
   { player1: Player.find_or_create_by(name: 'Baul Bho'),
     player2: Player.find_or_create_by(name: 'Barvin Bung'),
-    game_id: Game.create(player: Player.find_or_create_by(name: 'Baul Bho') )
+    game_id: Game.create(winner: Player.find_or_create_by(name: 'Baul Bho') )
   },
 
   { player1: Player.find_or_create_by(name: 'Gandalf'),
     player2: Player.find_or_create_by(name: 'Samus'),
-    game_id: Game.create(player: Player.find_or_create_by(name: 'Baul Bho') )
+    game_id: Game.create(winner: Player.find_or_create_by(name: 'Baul Bho') )
+  },
+
+  { player1: Player.find_or_create_by(name: 'Mewtwo'),
+    player2: Player.find_or_create_by(name: 'Mew'),
+    game_id: Game.create
+  },
+
+  { player1: Player.find_or_create_by(name: 'Bimmy Buan'),
+    player2: Player.find_or_create_by(name: 'Mew'),
+    game_id: Game.create
   }
 ])
