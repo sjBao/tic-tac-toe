@@ -10,7 +10,7 @@ class PlayerGame < ApplicationRecord
   validate :players_are_unique
 
   def players_are_unique
-    if @player1 == @player2
+    if player1 == player2
       errors.add(:players, "Players must have different names.")
     end
   end

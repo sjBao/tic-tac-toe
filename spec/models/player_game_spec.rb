@@ -1,6 +1,27 @@
 require 'rails_helper'
 
 RSpec.describe PlayerGame, type: :model do
+  context "A normal PlayerGame" do
+    let(:match)  { PlayerGame.new }
+
+    before(:each) do
+      match.player1 = Player.find_or_create_by(name: 'Samus')
+      match.player2 = Player.find_or_create_by(name: 'Zelda')
+      match.game = Game.create
+    end
+
+    it "should be valid" do
+      expect(match.valid?).to be true
+    end
+
+    it "should save" do
+      expect(match.save).to be true
+    end
+  end
+
+
+
+
   context "Player Game associations" do
     it { should belong_to(:player1) }
     it { should belong_to(:player2) }
@@ -37,7 +58,7 @@ RSpec.describe PlayerGame, type: :model do
       match.player2 = match.player1
       match.game = Game.create
     end
-    
+
     it "should not be valid" do
       expect(match.valid?).to be false
     end
