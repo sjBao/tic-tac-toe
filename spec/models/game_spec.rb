@@ -10,7 +10,7 @@ RSpec.describe Game, type: :model do
     let(:game) { Game.new }
 
     it "should return 'Draw'" do
-      expect(game).to eq('Draw')
+      expect(game.winner).to eq('Draw')
     end
 
     it "should still be valid" do
