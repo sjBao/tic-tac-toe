@@ -18,10 +18,7 @@ RSpec.describe PlayerGame, type: :model do
       expect(match.save).to be true
     end
   end
-
-
-
-
+  
   context "Player Game associations" do
     it { should belong_to(:player1) }
     it { should belong_to(:player2) }
