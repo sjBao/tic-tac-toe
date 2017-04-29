@@ -6,4 +6,12 @@ class PlayerGame < ApplicationRecord
     class_name: Player, foreign_key: 'player2'
 
   belongs_to :game
+
+  validate :players_are_unique
+
+  def players_are_unique
+    if @player1 == @player2
+      errors.add(:players, "Players must have different names.")
+    end
+  end
 end
