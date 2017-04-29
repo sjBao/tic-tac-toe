@@ -6,4 +6,9 @@ class Game < ApplicationRecord
 
   has_one :matches,
     class_name: PlayerGame
+
+  def winner
+    return 'Draw' unless @winner
+    @winner
+  end
 end
