@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Player.destroy_all
+PlayerGame.destroy_all
+Game.destroy_all
 
 players = Player.create([
   { name: 'Bictoria Bun' },
@@ -16,18 +18,15 @@ players = Player.create([
   { name: 'Bimmy Buan' }
 ])
 
-PlayerGame.destroy_all
-Game.destroy_all
-
 matches = PlayerGame.create([
   { player1: Player.find_or_create_by(name: 'Bictoria Bun'),
     player2: Player.find_or_create_by(name: 'Bristen Ban'),
-    game: Game.create(winner: Player.find_or_create_by(name: 'Bictoria Bun') )
+    game: Game.create(winner: Player.find_or_create_by(name: 'Bictoria Bun'))
   },
 
   { player1: Player.find_or_create_by(name: 'Baul Bho'),
     player2: Player.find_or_create_by(name: 'Barvin Bung'),
-    game: Game.create(winner: Player.find_or_create_by(name: 'Baul Bho') )
+    game: Game.create(winner: Player.find_or_create_by(name: 'Baul Bho'))
   },
 
   { player1: Player.find_or_create_by(name: 'Gandalf'),
@@ -44,17 +43,20 @@ matches = PlayerGame.create([
     player2: Player.find_or_create_by(name: 'Mew'),
     game: Game.create(winner: Player.find_or_create_by(name: 'Mew'))
   },
+
   { player1: Player.find_or_create_by(name: 'Mewtwo'),
     player2: Player.find_or_create_by(name: 'Mew'),
-    game: Game.create(winner: Player.find_or_create_by(name: 'Mewtwo')
+    game: Game.create(winner: Player.find_or_create_by(name: 'Mewtwo'))
   },
+
   { player1: Player.find_or_create_by(name: 'Mewtwo'),
     player2: Player.find_or_create_by(name: 'Mew'),
-    game: Game.create(winner: Player.find_or_create_by(name: 'Mew')
+    game: Game.create(winner: Player.find_or_create_by(name: 'Mew'))
   },
+
   { player1: Player.find_or_create_by(name: 'Mewtwo'),
     player2: Player.find_or_create_by(name: 'Mew'),
-    game: Game.create(winner: Player.find_or_create_by(name: 'Mew')
-  },
+    game: Game.create(winner: Player.find_or_create_by(name: 'Mew'))
+  }
 
 ])

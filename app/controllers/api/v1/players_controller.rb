@@ -20,7 +20,7 @@ class Api::V1::PlayersController < ApplicationController
   private
 
   def find_player
-    @player = Player.find(params[:id])
+    @player = Player.find_by(id: params[:id])
   end
 end
 
