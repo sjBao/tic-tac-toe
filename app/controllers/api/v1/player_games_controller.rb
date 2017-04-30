@@ -17,11 +17,6 @@ class Api::V1::PlayerGamesController < ApplicationController
     end
     @match.game = Game.create
   end
-
-  private
-
-  def player_game_params
-  end
 end
 
 
