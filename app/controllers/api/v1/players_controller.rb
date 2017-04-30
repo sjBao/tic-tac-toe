@@ -1,6 +1,6 @@
 class Api::V1::PlayersController < ApplicationController
   def index
-    @player = Player.all
+    @players = Player.all
   end
 end
 
