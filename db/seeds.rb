@@ -32,7 +32,7 @@ matches = PlayerGame.create([
 
   { player1: Player.find_or_create_by(name: 'Gandalf'),
     player2: Player.find_or_create_by(name: 'Samus'),
-    game: Game.create(winner: Player.find_or_create_by(name: 'Baul Bho') )
+    game: Game.create(winner: Player.find_or_create_by(name: 'Gandalf'))
   },
 
   { player1: Player.find_or_create_by(name: 'Mewtwo'),
@@ -42,6 +42,19 @@ matches = PlayerGame.create([
 
   { player1: Player.find_or_create_by(name: 'Bimmy Buan'),
     player2: Player.find_or_create_by(name: 'Mew'),
-    game: Game.create
-  }
+    game: Game.create(winner: Player.find_or_create_by(name: 'Mew'))
+  },
+  { player1: Player.find_or_create_by(name: 'Mewtwo'),
+    player2: Player.find_or_create_by(name: 'Mew'),
+    game: Game.create(winner: Player.find_or_create_by(name: 'Mewtwo')
+  },
+  { player1: Player.find_or_create_by(name: 'Mewtwo'),
+    player2: Player.find_or_create_by(name: 'Mew'),
+    game: Game.create(winner: Player.find_or_create_by(name: 'Mew')
+  },
+  { player1: Player.find_or_create_by(name: 'Mewtwo'),
+    player2: Player.find_or_create_by(name: 'Mew'),
+    game: Game.create(winner: Player.find_or_create_by(name: 'Mew')
+  },
+
 ])
