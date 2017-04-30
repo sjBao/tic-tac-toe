@@ -19,5 +19,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://sjbao.github.io/tic-tac-toe"
+  "homepage": "http://sjbao.github.io/tic-tac-toe",
+  "proxy": "http://localhost:3001/"
 }
