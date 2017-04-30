@@ -4,4 +4,10 @@ Rails.application.routes.draw do
       resources :player_games
     end
   end
+
+  scope module: 'api' do
+    namespace :v1 do
+      resources :players
+    end
+  end
 end
