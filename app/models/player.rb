@@ -5,7 +5,7 @@ class Player < ApplicationRecord
     :class_name => Game, :foreign_key => 'winner_id'
 
   has_many :matches,
-    :class_name => PlayerGame
+    :class_name => PlayerGame, :foreign_key => 'player1'
 
   has_many :games_played,
     :through => :matches, :source => :game
