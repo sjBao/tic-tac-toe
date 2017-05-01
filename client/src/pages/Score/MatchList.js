@@ -1,15 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+var dateFormat = require('dateformat');
+import './MatchList.css'
 
 const MatchList = (props) => {
   return (
-    <div className="recentMatches">
-      <table>
+    <table className="match-list">
         <thead>
           <tr>
-            <th>Player1</th>
-            <th>Player2</th>
-            <th>Winner</th>
-            <th>Time</th>
+            <td>Players</td>
+            <td>Winner</td>
+            <td>Time</td>
           </tr>
         </thead>
         <tbody>
@@ -17,17 +18,17 @@ const MatchList = (props) => {
             props.recentMatches.map((match, i) => {
               return(
                 <tr key={i}>
-                  <td>{ match.player1.name }</td>
-                  <td>{ match.player2.name }</td>
+                  <td className="match-players">
+                    { match.player1.name } vs. { match.player2.name }
+                  </td>
                   <td>{ match.winner }</td>
-                  <td>{ match.created_at }</td>
+                  <td>{ dateFormat(match.created_at, 'mediumDate') }</td>
                 </tr>
               )
             })
           }
         </tbody>
-      </table>
-    </div>
+    </table>
   )
 }
 

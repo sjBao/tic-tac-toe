@@ -1,0 +1,8 @@
+.match-list {
+  color: #666;
+  text-align: center;
+}
+
+.match-list table td {
+  padding: 5px 20px;
+}
