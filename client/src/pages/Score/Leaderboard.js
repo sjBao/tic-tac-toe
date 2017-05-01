@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import dateFormat from 'dateformat';
 import './Leaderboard.css'
 
 const Leaderboard = (props) => {
