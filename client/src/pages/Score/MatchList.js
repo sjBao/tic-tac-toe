@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-var dateFormat = require('dateformat');
+import dateFormat from 'dateformat';
 import './MatchList.css'
 
 const MatchList = (props) => {
@@ -19,7 +19,9 @@ const MatchList = (props) => {
               return(
                 <tr key={i}>
                   <td className="match-players">
-                    { match.player1.name } vs. { match.player2.name }
+                    <p>{ match.player1.name }</p>
+                    vs.
+                    <p>{ match.player2.name }</p>
                   </td>
                   <td>{ match.winner }</td>
                   <td>{ dateFormat(match.created_at, 'mediumDate') }</td>
