@@ -1,6 +1,6 @@
 import React from 'react'
 
-const RecentMatches = (props) => {
+const MatchList = (props) => {
   return (
     <div className="recentMatches">
       <table>
@@ -31,4 +31,4 @@ const RecentMatches = (props) => {
   )
 }
 
-export default RecentMatches;
+export default MatchList;

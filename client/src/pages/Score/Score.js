@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import RecentMatches from './RecentMatches';
+import MatchList from './MatchList';
 
 class Score extends Component {
   state = {
@@ -23,7 +23,7 @@ class Score extends Component {
     return (
       <div className="match-history">
         <h1>Score Page</h1>
-        <RecentMatches recentMatches={recentMatches} />
+        <MatchList recentMatches={recentMatches} />
       </div>
     )
   }
