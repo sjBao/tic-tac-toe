@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 
 class GameMenu extends Component {
+  state = {
+    submittingResults: false,
+  }
+  
   render() {
     let { reset, winner, gameOver } = this.props
 

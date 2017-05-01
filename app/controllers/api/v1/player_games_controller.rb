@@ -16,6 +16,12 @@ class Api::V1::PlayerGamesController < ApplicationController
       @match.game = Game.create(Player.find_or_create_by(name: params[:winner]))
     end
     @match.game = Game.create
+
+    if @match.save
+      return 'success'
+    else
+      return @match.errors
+    end
   end
 end
 
