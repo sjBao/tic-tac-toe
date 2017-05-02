@@ -20,7 +20,7 @@ class GameMenu extends Component {
 
   render() {
     let { submittingResults } = this.state
-    let { reset, winner, gameOver } = this.props
+    let { reset, mainMenu, winner, gameOver } = this.props
 
     return (
       <div className={"game-menu "+ gameOver}>
@@ -37,6 +37,7 @@ class GameMenu extends Component {
         { submittingResults ?
           <GameForm
             winner={winner}
+            mainMenu={mainMenu}
             cancelForm={this.cancelForm} /> :
           ''
         }

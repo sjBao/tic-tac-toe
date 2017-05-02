@@ -12,6 +12,14 @@ class Game extends Component {
     winner: null,
   };
 
+  mainMenu = () => {
+    this.setState({
+      board: Array(9).fill(null),
+      winner: null,
+      gameOver: true,
+    });
+  }
+
   reset = () => {
     this.setState({
       board: Array(9).fill(null),
@@ -136,6 +144,7 @@ class Game extends Component {
               <GameMenu
                 reset={this.reset}
                 winner={winner}
+                mainMenu={this.mainMenu}
                 gameOver={gameOver}
                /> : ''
             }

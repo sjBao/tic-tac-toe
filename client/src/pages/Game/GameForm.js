@@ -4,6 +4,7 @@ import './GameForm.css'
 class GameForm extends Component {
 
   handleSubmit = (event) => {
+    let { mainMenu, cancelForm } = this.props;
     event.preventDefault();
     let { player1, player2 } = this.refs;
     let winner = this.props.winner;
@@ -26,6 +27,9 @@ class GameForm extends Component {
         winner: `${winner}`,
       })
     })
+    mainMenu();
+    cancelForm();
+
   }
 
   render() {
