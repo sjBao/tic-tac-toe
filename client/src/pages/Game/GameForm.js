@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './GameForm.css'
 
 class GameForm extends Component {
+  state = {
+    errors: [],
+  }
 
   handleSubmit = (event) => {
     let { mainMenu, cancelForm } = this.props;
@@ -26,9 +29,16 @@ class GameForm extends Component {
         player2: `${player2.value}`,
         winner: `${winner}`,
       })
-    })
-    mainMenu();
-    cancelForm();
+    }).then(promise => {
+      return promise.json()
+    }).then(response => {
+      if (response.error) {
+        this.setState({ errors: response.error })
+      } else {
+        mainMenu();
+        cancelForm();
+      }
+    });
 
   }
 
@@ -36,6 +46,12 @@ class GameForm extends Component {
     let { cancelForm } = this.props;
     return(
       <form onSubmit={this.handleSubmit}>
+        <ul style={ {textAlign: 'left'} }>
+          { this.state.errors.map((error, i) => (
+            <li key={i}>{error}</li>
+            ))
+          }
+        </ul>
         <div className="input-section">
           <input
             id="player1"

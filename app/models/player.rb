@@ -1,5 +1,5 @@
 class Player < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true, length: { maximum: 21 }
 
   has_many :games_won,
     :class_name => Game, :foreign_key => 'winner_id'
