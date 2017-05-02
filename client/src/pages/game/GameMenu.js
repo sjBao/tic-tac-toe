@@ -3,7 +3,7 @@ import GameForm from './GameForm';
 
 class GameMenu extends Component {
   state = {
-    submittingResults: false,
+    submittingResults: true,
   }
 
   toggleForm = () => {

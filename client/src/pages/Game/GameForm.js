@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './GameForm.css'
 
 class GameForm extends Component {
 
@@ -31,18 +32,31 @@ class GameForm extends Component {
     let { cancelForm } = this.props;
     return(
       <form onSubmit={this.handleSubmit}>
-        <label htmlFor="player1">Player1</label>
-        <input id="player1" type="text" name="player1" ref="player1"/>
+        <div className="input-section">
+          <input
+            id="player1"
+            type="text"
+            name="player1"
+            ref="player1"
+            placeholder="Player 1"
+          />
+          <input
+            placeholder="Player 2"
+            id="player2"
+            type="text"
+            name="player2"
+            ref="player2"/>
+        </div>
         <br/>
-        <br/>
-        <label htmlFor="player2">Player2</label>
-        <input id="player2" type="text" name="player2" ref="player2"/>
-        <br/>
-        <button type="submit">Save!</button>
-        <button type="button" onClick={cancelForm}>Cancel</button>
+        <button type="submit">Save</button>
+        <button
+          className="cancel"
+          type="button"
+          onClick={cancelForm}>
+          Cancel
+        </button>
       </form>
     )
   }
 }
-
 export default GameForm;
