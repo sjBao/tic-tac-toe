@@ -6,8 +6,13 @@ const Leaderboard = (props) => {
     <table className="leaderboard">
         <thead>
           <tr>
-            <td>Player</td>
-            <td>Wins</td>
+            <th colSpan="2">
+              <h1>Leaderboard</h1>
+            </th>
+          </tr>
+          <tr>
+            <th>Player</th>
+            <th>Wins</th>
           </tr>
         </thead>
         <tbody>

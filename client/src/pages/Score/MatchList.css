@@ -7,6 +7,7 @@
 .match-list td {
   border: 1px solid #EEE;
   padding: 5px 20px;
+  width: 1%;
 }
 
 .match-list tr:nth-child(even) {

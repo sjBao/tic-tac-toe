@@ -37,9 +37,8 @@ class Score extends Component {
     let { recentMatches, leaderboard } = this.state
     return (
       <div className="match-history">
-        <h1>Score Page</h1>
-        <MatchList recentMatches={recentMatches} />
         <Leaderboard leaderboard={leaderboard} />
+        <MatchList recentMatches={recentMatches} />
       </div>
     )
   }

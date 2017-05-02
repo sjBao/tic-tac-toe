@@ -8,9 +8,14 @@ const MatchList = (props) => {
     <table className="match-list">
         <thead>
           <tr>
-            <td>Players</td>
-            <td>Winner</td>
-            <td>Time</td>
+            <th colSpan="3">
+              <h1>Recent Matches</h1>
+            </th>
+          </tr>
+          <tr>
+            <th>Players</th>
+            <th>Winner</th>
+            <th>Time</th>
           </tr>
         </thead>
         <tbody>
