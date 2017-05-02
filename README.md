@@ -1,24 +1,9 @@
-# README
+# tic-tac-toe
+demo: http://supuilam.com/tic-tac-toe
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## running on your machine:
+make sure you have node installed and up to date.
+1. clone the repository : `git clone https://github.com/sjBao/tic-tac-toe.git`
+2. go in to project directory: `$ cd tic-tac-toe/client`
+3. install dependencies: `$ npm i`
+4. start on localhost:  `$ npm run start`
