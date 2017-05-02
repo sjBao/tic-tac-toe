@@ -3,7 +3,7 @@ import GameForm from './GameForm';
 
 class GameMenu extends Component {
   state = {
-    submittingResults: true,
+    submittingResults: false,
   }
 
   toggleForm = () => {
@@ -35,7 +35,9 @@ class GameMenu extends Component {
         }
 
         { submittingResults ?
-          <GameForm cancelForm={this.cancelForm} /> :
+          <GameForm
+            winner={winner}
+            cancelForm={this.cancelForm} /> :
           ''
         }
       </div>

@@ -10,17 +10,20 @@ class Api::V1::PlayerGamesController < ApplicationController
 
   def create
     @match = PlayerGame.new
-    @match.player1 = Player.find_or_create_by(name: params[:player1])
-    @match.player1 = Player.find_or_create_by(name: params[:player2])
-    if params[:winner]
-      @match.game = Game.create(Player.find_or_create_by(name: params[:winner]))
+    @match.player1 = Player.find_or_initialize_by(name: params[:player1])
+    @match.player2 = Player.find_or_initialize_by(name: params[:player2])
+    @match.game = Game.new
+    if params[:winner] == 'player1'
+      @match.game.winner = @match.player1
+    elsif params[:winner] == 'player2'
+      @match.game.winner = @match.player2
     end
-    @match.game = Game.create
+
 
     if @match.save
-      return 'success'
+      render json: { status: 'success' }, status: 204
     else
-      return @match.errors
+       render json: { error: @match.errors.full_messages, status: 'error' }, status: 422
     end
   end
 end

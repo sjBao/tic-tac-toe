@@ -9,9 +9,11 @@ class PlayerGame < ApplicationRecord
 
   validate :players_are_unique
 
+  validates_associated [:player1, :player2], { presence: true }
+
   def players_are_unique
-    if player1 == player2
-      errors.add(:players, "Players must have different names.")
+    if player1.name == player2.name
+      errors.add(:players, "must have different names.")
     end
   end
 end
