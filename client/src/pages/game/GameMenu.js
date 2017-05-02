@@ -7,7 +7,17 @@ class GameMenu extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.refs);
+    let { player1, player2 } = this.refs;
+    let winner = this.props.winner;
+    let winnerName;
+
+    if (winner.match('1')) {
+      winnerName = 'player1';
+    }
+    else if (winner.match('2')) {
+      winnerName = 'player2';
+    }
+
     fetch("/v1/player_games", {
       method: 'POST',
       headers: {
@@ -15,9 +25,9 @@ class GameMenu extends Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        player1: 'Bandy Biufu',
-        player2: 'Kebin Bhen',
-        winner: ''
+        player1: `${player1.value}`,
+        player2: `${player2.value}`,
+        winner: `${winnerName}`
       })
     })
   }
