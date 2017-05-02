@@ -10,7 +10,7 @@
     "dateformat": "^2.0.0"
   },
   "devDependencies": {
-    "react-scripts": "0.9.5",
+    "react-scripts": "0.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
