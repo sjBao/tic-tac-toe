@@ -7,7 +7,7 @@ class Layout extends Component {
       <div className="container">
         <nav>
           <ul>
-            <li> <Link to="/">Game</Link></li>
+            <li><Link to="/">Game</Link></li>
             <li><Link to="/score">Match History</Link></li>
           </ul>
         </nav>

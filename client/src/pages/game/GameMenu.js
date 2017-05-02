@@ -1,67 +1,57 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import GameForm from './GameForm';
 
 class GameMenu extends Component {
   state = {
     submittingResults: false,
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    let { player1, player2 } = this.refs;
-    let winner = this.props.winner;
-    let winnerName;
+  toggleForm = () => {
+    this.setState({
+      submittingResults: true
+    })
+  }
 
-    if (winner.match('1')) {
-      winnerName = 'player1';
-    }
-    else if (winner.match('2')) {
-      winnerName = 'player2';
-    }
-
-    fetch("/v1/player_games", {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        player1: `${player1.value}`,
-        player2: `${player2.value}`,
-        winner: `${winnerName}`
-      })
+  cancelForm = () => {
+    this.setState({
+      submittingResults: false
     })
   }
 
   render() {
+    let { submittingResults } = this.state
     let { reset, winner, gameOver } = this.props
 
     return (
       <div className={"game-menu "+ gameOver}>
-        { gameOver ? <NewGameBtn reset={reset} /> : '' }
-        { gameOver && winner ? <SubmitResultsBtn /> : '' }
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="player1">Player1 name:</label>
-          <input id="player1" type="text" name="player1" ref="player1"/>
-          <br/>
-          <br/>
-          <label htmlFor="player2">Player2 name:</label>
-          <input id="player2" type="text" name="player2" ref="player2"/>
-          <input type="submit"/>
-        </form>
+        { gameOver && !submittingResults ?
+          <NewGameBtn reset={reset} /> :
+          ''
+        }
+
+        { gameOver && winner && !submittingResults ?
+          <SubmitResultsBtn toggleForm={this.toggleForm} /> :
+          ''
+        }
+
+        { submittingResults ?
+          <GameForm cancelForm={this.cancelForm} /> :
+          ''
+        }
       </div>
     )
   };
 };
 
 const NewGameBtn = (props) => (
-    <button className="reset" onClick={props.reset}>
-      New Game!
-    </button>
+  <button className="reset" onClick={props.reset}>
+    New Game!
+  </button>
 )
 
-const SubmitResultsBtn = () => (
-    <button className="submit-results">
-      Submit results!
-    </button>
+const SubmitResultsBtn = (props) => (
+  <button className="submit-results" onClick={props.toggleForm}>
+    Submit results!
+  </button>
 )
 export default GameMenu;
