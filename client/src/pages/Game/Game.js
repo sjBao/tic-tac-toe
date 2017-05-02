@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BoardBox from './BoardBox.js';
+import BoardBox from '/BoardBox';
 import GameMenu from './GameMenu';
 import GameStatus from './GameStatus';
 import './Game.css';
