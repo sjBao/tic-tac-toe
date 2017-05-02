@@ -21,7 +21,6 @@ class GameForm extends Component {
     fetch("/v1/player_games", {
       method: 'POST',
       headers: {
-        'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
@@ -30,16 +29,15 @@ class GameForm extends Component {
         winner: `${winner}`,
       })
     }).then(promise => {
-      return promise.json()
+        return promise.json()
     }).then(response => {
       if (response.error) {
         this.setState({ errors: response.error })
       } else {
-        mainMenu();
         cancelForm();
+        mainMenu();
       }
     });
-
   }
 
   render() {

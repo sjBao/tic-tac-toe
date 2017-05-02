@@ -21,7 +21,7 @@ class Api::V1::PlayerGamesController < ApplicationController
 
 
     if @match.save
-      render json: { status: 'success' }, status: 204
+      render json: { status: 'success' }, status: 200
     else
        render json: { error: @match.errors.full_messages, status: 'error' }, status: 422
     end
