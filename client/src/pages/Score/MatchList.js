@@ -24,9 +24,11 @@ const MatchList = (props) => {
               return(
                 <tr key={i}>
                   <td className="match-players">
-                    <p>{ match.player1.name }</p>
+                    <span>{ match.player1.name }</span>
+                    <br/>
                     vs.
-                    <p>{ match.player2.name }</p>
+                    <br/>
+                    <span>{ match.player2.name }</span>
                   </td>
                   <td>{ match.winner }</td>
                   <td>{ dateFormat(match.created_at, 'mediumDate') }</td>

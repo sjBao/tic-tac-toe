@@ -4,6 +4,11 @@ body {
   font-family: monospace;
 }
 
+.container {
+  max-width: 500px;
+  margin: auto;
+}
+
 h1 {
   font-size: 3em;
   color: #666;
@@ -13,4 +18,8 @@ h1 {
 button {
   font-size: 1.5em;
   font-family: monospace;
+}
+
+table td {
+  width: 10%
 }

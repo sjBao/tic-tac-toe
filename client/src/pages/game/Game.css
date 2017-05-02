@@ -1,6 +1,5 @@
-.container {
-  max-width: 500px;
-  margin: 50px auto;
+.Game {
+  margin: 70px 0;
 }
 
 .board {
@@ -13,7 +12,7 @@
   background: #999;
   max-width: 355px;
   height: 335px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .board-box {
@@ -105,8 +104,14 @@
   color: royalblue;
 }
 
-
 @media (max-width: 480px) {
+  .container {
+    width: 90%;
+  }
+}
+
+
+@media (max-width: 400px) {
   .container {
     width: 100%;
   }
