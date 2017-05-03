@@ -5,8 +5,8 @@
     "npm": "4.2.0"
   },
   "scripts": {
-    "build": "cd client && npm install && npm run build && cd ..",
-    "deploy": "cp -a client/build/. public/",
+    "build": "cd tic-tac-tony && npm install && npm run build && cd ..",
+    "deploy": "cp -a tic-tac-tony/build/. public/",
     "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
   }
 }
