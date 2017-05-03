@@ -1,0 +1,14 @@
+.leaderboard {
+  color: #666;
+  text-align: center;
+  margin: 40px auto;
+}
+
+.leaderboard td {
+  border: 1px solid #EEE;
+  padding: 5px 20px;
+}
+
+.leaderboard tr:nth-child(even) {
+  background-color: #faeeee;
+}
