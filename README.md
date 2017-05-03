@@ -14,9 +14,7 @@ If you want to simply play the game and don't care about saving match results sk
 
 
 2. **npm:**
-* go in to project directory: `$ cd tic-tac-toe/client`
-* install dependencies: `$ npm i`
-* start on localhost:  `$ npm run start`
+* `$ npm run build`
 
 After you've finish the set up you can run on your machine with `$ rake start`.  
 Alternatively, you can run without backend by going into client folder and running `$ npm run start`.
