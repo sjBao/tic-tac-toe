@@ -8,7 +8,7 @@ clone the repository : `git clone https://github.com/sjBao/tic-tac-toe.git`
 If you want to simply play the game and don't care about saving match results skip the rails portion.*
 
 1. **Rails:**
-* `$ bundle
+* `$ bundle`
 * `$ rails db:create`
 * `$ rails db:migrate`
 
