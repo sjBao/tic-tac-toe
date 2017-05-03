@@ -16,7 +16,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
+    "eject": "react-scripts eject"
   },
   "homepage": "http://sjbao.github.io/tic-tac-toe",
   "proxy": "http://localhost:3001/"
