@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MatchList from './MatchList';
-import Leaderboard from './Leaderboard'
+import Leaderboard from './Leaderboard';
+import './Score.css'
 
 class Score extends Component {
   state = {
