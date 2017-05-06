@@ -137,7 +137,6 @@ class Game extends Component {
 
     return (
       <div className="Game">
-        <h1>Tic-Tac-Toe</h1>
         <div className="board">
           <div className={"game-menu " + gameOver}>
             { gameOver ?
